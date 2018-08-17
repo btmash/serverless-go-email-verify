@@ -24,7 +24,8 @@ func Handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 
 	// Create a goroutine that will attempt to connect to the SMTP server
 	go func() {
-		result, _ := mailck.Check("no-reply@card.com", request.Body)
+		// You may need to change the email address to something you would use.
+		result, _ := mailck.Check("test@example.com", request.Body)
 		returnData := new(emailStatus)
 		returnData.Email = request.Body
 		switch {

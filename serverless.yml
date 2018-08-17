@@ -19,9 +19,11 @@ service: email-verify # NOTE: update this with your service name
 
 provider:
   name: aws
+  stage: dev
+  region: us-east-1
   runtime: go1.x
   memorySize: 128
-  timeout: 10
+  timeout: 20
 
 # you can overwrite defaults here
 #  stage: dev
